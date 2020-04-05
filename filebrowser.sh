@@ -40,7 +40,7 @@ fi
 
 install() {
 	$cmd install wget -y
-	Filebrowser_download_link="https://github.com/filebrowser/filebrowser/releases/download/2.0.15/$filebrowser"
+	Filebrowser_download_link="https://github.com/filebrowser/filebrowser/releases/download/v2.0.15/$filebrowser"
 	mkdir -p /tmp/Filebrowser
 	if ! wget --no-check-certificate --no-cache -O "/tmp/Filebrowser.tar.gz" $Filebrowser_download_link; then
 		echo -e "$red 下载 Filebrowser 失败！$none" && exit 1
