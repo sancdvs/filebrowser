@@ -27,20 +27,20 @@ else
 fi
 
 if [[ $sys_bit == "i386" || $sys_bit == "i686" ]]; then
-	filebrowser="linux-386-filebrowser.tar.gz"
+	filebrowser="linux-386-filebrowser.tar.gz?raw=true"
 elif [[ $sys_bit == "x86_64" ]]; then
-	filebrowser="linux-386-filebrowser.tar.gz"
+	filebrowser="linux-amd64-filebrowser.tar.gz?raw=true"
 elif [[ $sys_bit == "aarch64" ]]; then
-	filebrowser="linux-arm64-filebrowser.tar.gz"
+	filebrowser="linux-arm64-filebrowser.tar.gz?raw=true"
 elif [[ $sys_bit = "armv7l" ]]; then
-	filebrowser="linux-armv7-filebrowser.tar.gz"
+	filebrowser="linux-armv7-filebrowser.tar.gz?raw=true"
 else
 	echo -e " \n$red毛支持你的系统....$none\n" && exit 1
 fi
 
 install() {
 	$cmd install wget -y
-	Filebrowser_download_link="https://github.com/filebrowser/filebrowser/releases/download/v2.0.15/$filebrowser"
+	Filebrowser_download_link="https://github.com/sancdvs/filebrowser/blob/master/$filebrowser"
 	mkdir -p /tmp/Filebrowser
 	if ! wget --no-check-certificate --no-cache -O "/tmp/Filebrowser.tar.gz" $Filebrowser_download_link; then
 		echo -e "$red 下载 Filebrowser 失败！$none" && exit 1
