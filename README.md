@@ -11,3 +11,5 @@ database: /etc/filebrowser/database.db, 数据库的路径
 root: /usr/local/caddy/www/file, 可管理的目录
 
 当caddy采用proxy代理filebrowser时，baseURL、proxy的url目录需相同，或都为空，或单proxy的url目录为空，不然会进不去，一直3个圆圈的进度条
+
+安装：wget -N --no-check-certificate https://raw.githubusercontent.com/sancdvs/filebrowser/master/filebrowser.sh && chmod +x filebrowser.sh && bash filebrowser.sh
