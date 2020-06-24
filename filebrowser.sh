@@ -66,7 +66,8 @@ WantedBy=multi-user.target
 		EOF
 
 		mkdir -p /etc/filebrowser
-		cat >/etc/filebrowser/filebrowser.json <<-EOF
+		if ! [ -e /etc/filebrowser/filebrowser.json ]; then
+			cat >/etc/filebrowser/filebrowser.json <<-EOF
 {
     "port": 9184,
     "baseURL": "",
@@ -76,10 +77,11 @@ WantedBy=multi-user.target
     "root": "/etc/filebrowser/"
 }
 		EOF
-
+		fi
+		
 		get_ip
 		systemctl enable filebrowser
-		systemctl start filebrowser
+		systemctl restart filebrowser
 
 		clear
 		echo -e "
