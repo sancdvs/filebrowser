@@ -67,6 +67,7 @@ WantedBy=multi-user.target
 		EOF
 
 		mkdir -p /etc/filebrowser
+		mkdir -p /etc/filebrowser/file
 		if ! [ -e /etc/filebrowser/filebrowser.json ]; then
 			cat >/etc/filebrowser/filebrowser.json <<-EOF
 {
@@ -75,7 +76,7 @@ WantedBy=multi-user.target
     "address": "",
     "log": "stdout",
     "database": "/etc/filebrowser/database.db",
-    "root": "/etc/filebrowser/"
+    "root": "/etc/filebrowser/file/"
 }
 		EOF
 		fi
