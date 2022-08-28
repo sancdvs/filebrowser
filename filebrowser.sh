@@ -76,7 +76,7 @@ WantedBy=multi-user.target
     "address": "",
     "log": "stdout",
     "database": "/etc/filebrowser/database.db",
-    "root": "/etc/filebrowser/file/"
+    "root": "/"
 }
 		EOF
 		fi
